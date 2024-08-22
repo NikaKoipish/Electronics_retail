@@ -1,6 +1,12 @@
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter
-from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (
+    CreateAPIView,
+    ListAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
+    DestroyAPIView,
+)
 
 from retail.models import NetworkUnit, Product
 from retail.serializer import NetworkUnitSerializer, ProductSerializer

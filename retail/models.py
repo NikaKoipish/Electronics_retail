@@ -27,9 +27,11 @@ class NetworkUnit(models.Model):
         max_digits=15,
         decimal_places=2,
         default=0.00,
-        verbose_name="Задолженность перед поставщиком, руб."
+        verbose_name="Задолженность перед поставщиком, руб.",
     )
-    date_of_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
+    date_of_create = models.DateTimeField(
+        auto_now_add=True, verbose_name="Время создания"
+    )
 
     def __str__(self):
         return f"{self.name}"
@@ -43,7 +45,9 @@ class Product(models.Model):
     name = models.CharField(max_length=250, verbose_name="Название продукта")
     product_model = models.CharField(max_length=250, verbose_name="Модель продукта")
     release_date = models.DateField(verbose_name="Дата выхода продукта")
-    network_unit = models.ForeignKey(NetworkUnit, on_delete=models.CASCADE, verbose_name="Поставщик")
+    network_unit = models.ForeignKey(
+        NetworkUnit, on_delete=models.CASCADE, verbose_name="Поставщик"
+    )
 
     def __str__(self):
         return f"{self.name} ({self.product_model})"
@@ -51,4 +55,3 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
-
