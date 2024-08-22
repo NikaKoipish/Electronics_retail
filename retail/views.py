@@ -39,7 +39,6 @@ class NetworkUnitUpdateAPIView(UpdateAPIView):
         super().perform_update(serializer)
 
 
-
 class NetworkUnitDestroyAPIView(DestroyAPIView):
     queryset = NetworkUnit.objects.all()
     serializer_class = NetworkUnitSerializer
