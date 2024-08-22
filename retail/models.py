@@ -4,9 +4,9 @@ NULLABLE = {"null": True, "blank": True}
 
 
 class NetworkUnit(models.Model):
-    LEVEL_ZERO = "0"
-    LEVEL_FIRST = "1"
-    LEVEL_SECOND = "2"
+    LEVEL_ZERO = 0
+    LEVEL_FIRST = 1
+    LEVEL_SECOND = 2
     LEVEL = [
         (LEVEL_ZERO, "завод"),
         (LEVEL_FIRST, "розничная сеть"),
@@ -23,7 +23,7 @@ class NetworkUnit(models.Model):
     supplier = models.ForeignKey(
         "self", on_delete=models.SET_NULL, verbose_name="Поставщик", **NULLABLE
     )
-    dept = models.DecimalField(
+    debt = models.DecimalField(
         max_digits=15,
         decimal_places=2,
         default=0.00,
